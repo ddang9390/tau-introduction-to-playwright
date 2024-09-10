@@ -1,0 +1,36 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://automationexercise.com/');
+  await page.getByRole('link', { name: ' Signup / Login' }).click();
+  await page.getByPlaceholder('Name').click();
+  await page.getByPlaceholder('Name').fill('randomname');
+  await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').click();
+  await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').fill('email@email.commm');
+  await page.getByRole('button', { name: 'Signup' }).click();
+  await page.getByLabel('Name *', { exact: true }).click();
+  await page.getByLabel('Password *').click();
+  await page.getByLabel('Password *').fill('123456');
+  await page.getByLabel('First name *').click();
+  await page.getByLabel('First name *').fill('1');
+  await page.getByLabel('Last name *').click();
+  await page.getByLabel('Last name *').fill('1');
+  await page.getByLabel('Company', { exact: true }).click();
+  await page.getByLabel('Company', { exact: true }).fill('1');
+  await page.getByLabel('Address * (Street address, P.').click();
+  await page.getByLabel('Address * (Street address, P.').fill('1');
+  await page.getByLabel('Country *').selectOption('United States');
+  await page.getByLabel('State *').click();
+  await page.getByLabel('State *').fill('we');
+  await page.getByLabel('City *').click();
+  await page.getByLabel('City *').fill('er');
+  await page.locator('#zipcode').click();
+  await page.locator('#zipcode').fill('e');
+  await page.getByLabel('Mobile Number *').click();
+  await page.getByLabel('Mobile Number *').fill('r');
+  await page.getByText('Title Mr. Mrs. Name * Email').click();
+  await page.getByRole('button', { name: 'Create Account' }).click();
+  await page.getByRole('link', { name: 'Continue' }).click();
+  await page.getByRole('link', { name: ' Delete Account' }).click();
+  await page.getByRole('link', { name: 'Continue' }).click();
+});

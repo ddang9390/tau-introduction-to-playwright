@@ -7,6 +7,23 @@ Welcome to the course "Introduction to Playwright" by [Renata Andrade](https://t
 ## Chapter 3 - Exercises
 
 1. Delete the file top-menu-page.ts and try to recreate it. What did you learn?
+Probably a typescript thing but there is a difference between ', ", and `
+
+POMs are divided into 3 categories: variables, constructor, and methods
+
+Variable Template:
+readonly var: var type;
+
+Constructor Template:
+constructor(page: Page){
+    this.page = page;
+    this.var = get the var through page's 'get by' methods
+}
+
+Method Template:
+async function(){
+    await some result;
+}
 
 1. Describe and implement a scenario for the search using page object models. Make sure you fill the search with a term and use the keyboard arrows to select one of the results. 
 
